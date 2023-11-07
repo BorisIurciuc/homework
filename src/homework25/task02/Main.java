@@ -17,6 +17,7 @@ public class Main {
       myPen.refill();             // метод - восстановление уровня чернил
     } else {
       System.out.println("текст слишком длинный");
+
     }
   }
 }
