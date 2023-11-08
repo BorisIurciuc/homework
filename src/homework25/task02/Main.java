@@ -5,19 +5,20 @@ package homework25.task02;
 public class Main {
 
   public static void main(String[] args) {
+
+    String text = "Привет, меня зовут Джон, мне 36 !";        //Заданный текст
+
     Pen myPen = new Pen();
     myPen.inkLevel = 1000;
     myPen.inkForChar = 10;
-    myPen.text = "Привет, меня зовут Джон, мне 36 !";
 
-    myPen.checkInk();              // метод - проверка достаточности чернил для данного текста
+    myPen.checkInk(text);          // метод - проверка достаточности чернил для данного текста
 
     if (myPen.checkInkLevel <= myPen.inkLevel ) {       // условие достаточности чернил
-      myPen.write();              // метод - вывод текста на консоль
+      myPen.write(text);          // метод - вывод текста на консоль
       myPen.refill();             // метод - восстановление уровня чернил
     } else {
       System.out.println("текст слишком длинный");
-
     }
   }
 }
