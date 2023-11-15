@@ -30,6 +30,7 @@ public class MyArray {
   public void set(int index, double value) {
     array[index] = value;
   }
+
   // метод который возвращает размер массива
   public int size() {
     return array.length;
@@ -87,14 +88,14 @@ public class MyArray {
   }
 
   //возвращает true если значение val есть в этом массиве
+
   public boolean contains(double val) {
-    for (int i = 0; i < array.length; i++) {
-      if (array[i] == val) {
+     if (array[indexOf(val)] == val) {
         return true;
       }
-    }
     return false;
   }
+
   //возвращает true если массив пустой
   public boolean isEmpty() {
     if (array.length == 0) {
@@ -106,39 +107,23 @@ public class MyArray {
   //добавляет элемент со значением val в конец
   public void addLast(double val) {
     double[] newArray = new double[array.length + 1];
-    copy(array, newArray);
-    newArray[array.length] = val;
-    array = newArray;
+    add(array.length, val);
   }
 
   //удаляет последний элемент
   public void removeLast() {
     double[] newArray = new double[array.length - 1];
-    for (int i = 0; i < newArray.length; i++) {
-      newArray[i] = array[i];
-    }
-    array = newArray;
+    remove(newArray.length);
   }
 
   //удаляет первое значение из массива, равное переданному
   public void removeVal(double val) {
-    if (indexOf(val) < 0 || indexOf(val) >= array.length) {
-      return;
-    }
     double[] newArray = new double[array.length - 1];
-    for (int i = 0; i < newArray.length; i++) {
-      if (i < indexOf(val)) {
-        newArray[i] = array[i];
-      } else {
-        newArray[i] = array[i + 1];
-      }
-    }
-    array = newArray;
+    remove(indexOf(val));
   }
 
   //заменяет значение val в массиве на значение newVal
   public  void replace(double val, double newVal) {
     array[indexOf(val)] = newVal;
   }
-
 }

@@ -1,18 +1,13 @@
 package homework28.lesson_28;
-
 /**
- * 15/11/2023 homework
- *
- * @author Boris Iurciuc (cohort36)
+ * 15/11/2023 homework * * @author Boris Iurciuc (cohort36)
  */
 public class Main {
-
 
     public static void main(String[] args) {
       double[] arr = {4, 2, 7, 1, -5, 6};
 
       MyArray myArray = new MyArray(arr);
-
 
       System.out.println(myArray.contains(myArray.indexOf(7)));
 
@@ -31,9 +26,7 @@ public class Main {
       myArray.removeVal(7);
 
       myArray.replace(2, -111);
-
       System.out.println(myArray);
+
     }
-
-
 }
