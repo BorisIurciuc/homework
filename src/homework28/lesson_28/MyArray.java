@@ -28,6 +28,9 @@ public class MyArray {
   }
   // метод для изменения значения элемента по индексу
   public void set(int index, double value) {
+    if (index < 0 || index >= array.length) {
+      return;
+    }
     array[index] = value;
   }
 
@@ -118,7 +121,6 @@ public class MyArray {
 
   //удаляет первое значение из массива, равное переданному
   public void removeVal(double val) {
-    double[] newArray = new double[array.length - 1];
     remove(indexOf(val));
   }
 
