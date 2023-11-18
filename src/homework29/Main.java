@@ -7,7 +7,7 @@ public class Main {
 
   public static void main(String[] args) {
     Move move = new Move();
-    Light light = Light.GREEN;
+    Light light = Light.YELLOW;
 
     move.go(light);
     move.print(light);

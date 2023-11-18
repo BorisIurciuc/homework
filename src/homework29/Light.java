@@ -3,7 +3,8 @@ package homework29;
 public enum Light {
   //для пешеходов всего два возможных варианта состояния светофора
   GREEN("green"),
-  ROT("rot");
+  YELLOW("yellow"),
+  RED("rot");
 
   private final String light;
 

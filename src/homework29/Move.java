@@ -14,7 +14,10 @@ public class Move {
       case GREEN:
         step = true;
         break;
-      case ROT:
+      case YELLOW:
+        step = false;
+        break;
+      case RED:
         step = false;
         break;
     }
