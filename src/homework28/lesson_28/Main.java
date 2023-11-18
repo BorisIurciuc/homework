@@ -8,18 +8,18 @@ public class Main {
       double[] arr = {4, 2, 7, 1, -5, 6};
 
     MyArray myArray = new MyArray(arr);
-//
-//      System.out.println(myArray.contains(myArray.indexOf(7)));
-//
-//      System.out.println(myArray.isEmpty());
-//
-//      myArray.set(myArray.indexOf(1), 10);
-//
-//      myArray.add(myArray.indexOf(7), 123);
-//
-//      myArray.remove(myArray.indexOf(7));
-//
-//      myArray.addLast(222);
+
+      System.out.println(myArray.contains(myArray.indexOf(7)));
+
+      System.out.println(myArray.isEmpty());
+
+      myArray.set(myArray.indexOf(1), 10);
+
+      myArray.add(myArray.indexOf(7), 123);
+
+      myArray.remove(myArray.indexOf(7));
+
+      myArray.addLast(222);
 
       myArray.removeLast();
       System.out.println(myArray);

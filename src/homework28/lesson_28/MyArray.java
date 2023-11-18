@@ -93,30 +93,22 @@ public class MyArray {
   //возвращает true если значение val есть в этом массиве
 
   public boolean contains(double val) {
-     if (array[indexOf(val)] == val) {
-        return true;
-      }
-    return false;
+    return indexOf(val) != -1;
   }
 
   //возвращает true если массив пустой
   public boolean isEmpty() {
-    if (array.length == 0) {
-      return true;
-    }
-    return false;
+    return array.length == 0;
   }
 
   //добавляет элемент со значением val в конец
   public void addLast(double val) {
-    double[] newArray = new double[array.length + 1];
     add(array.length, val);
   }
 
   //удаляет последний элемент
   public void removeLast() {
-    double[] newArray = new double[array.length - 1];
-    remove(newArray.length);
+    remove(array.length - 1);
   }
 
   //удаляет первое значение из массива, равное переданному
@@ -125,7 +117,7 @@ public class MyArray {
   }
 
   //заменяет значение val в массиве на значение newVal
-  public  void replace(double val, double newVal) {
+  public void replace(double val, double newVal) {
     array[indexOf(val)] = newVal;
   }
 }
