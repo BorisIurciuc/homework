@@ -3,30 +3,26 @@ package homework29;
 /**
  * 15/11/2023 homework * @author Boris Iurciuc (cohort36)
  */
-public class Traffic {
-  private boolean permis;
-  public Traffic() {
+public class Move {
+  private boolean step;
+
+  public Move() {
   }
-//  public Traffic(boolean permis) {
-//    this.permis = permis;
-//  }
 
-//public boolean getPermis() {
-//    return permis;
-//  }
-  public void move(TrafficLight trafficLight) {
-
-    switch (trafficLight) {
+  public void go(Light light) {
+    switch (light) {
       case GREEN:
-        permis = true;
+        step = true;
         break;
-      case ROT:
-        permis = false;
+      case YELLOW:
+        step = false;
+        break;
+      case RED:
+        step = false;
         break;
     }
   }
-
-  public void print() {
-    System.out.println("Permission " + permis);
+  public void print(Light light) {
+    System.out.println("light " + light + " \nStep  " + step);
   }
 }

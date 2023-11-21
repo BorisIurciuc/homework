@@ -1,16 +1,15 @@
 package homework29;
-public enum TrafficLight {
+
+public enum Light {
   //для пешеходов всего два возможных варианта состояния светофора
   GREEN("green"),
-  ROT("rot");
+  YELLOW("yellow"),
+  RED("rot");
 
   private final String light;
 
-  TrafficLight(String light){
+  Light(String light) {
     this.light = light;
   }
 
-  //public String getLight() {
-//    return light;
-//  }
 }
