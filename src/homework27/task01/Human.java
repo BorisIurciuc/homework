@@ -1,4 +1,4 @@
- package homework27.task01;
+package homework27.task01;
 
 /**
  * 10/11/2023 homework * @author Boris Iurciuc (cohort36)
