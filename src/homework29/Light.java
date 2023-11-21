@@ -11,4 +11,5 @@ public enum Light {
   Light(String light) {
     this.light = light;
   }
+
 }
