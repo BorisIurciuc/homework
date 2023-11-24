@@ -21,13 +21,11 @@ public class Main04 {
       arr[i] = scanner.nextInt();
     }
 
-    String checkArr = "";
+    String checkArr = "Массив отсортирован";
     for (int i = 0; i < length - 1; i++) {
       if (arr[i] > arr[i + 1]) {
         checkArr = "Массив не отсортирован";
         break;
-      } else {
-        checkArr = "Массив отсортирован";
       }
     }
     System.out.println(checkArr);
