@@ -6,15 +6,15 @@ package homework33;
 public class Main02 {
 
   //метод, возвращающий массив типа char, в котором записан английский алфавит (маленькими буквами)
-  public static void alphabet() {
-    char ch;
-    for (int i = 97; i < 123; i++) {
-      ch = (char) i;
-      System.out.print(ch + " ");
+  public static void alphabet(char[] ch) {
+      for (int i = 97; i < 123; i++) {
+      ch[i] = (char) i;
+      System.out.print(ch[i] + " ");
     }
   }
 
   public static void main(String[] args) {
-    alphabet();
+    char[] ch = new char[123];
+    alphabet(ch);
   }
 }
