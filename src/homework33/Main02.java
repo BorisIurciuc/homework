@@ -11,6 +11,7 @@ public class Main02 {
       }
       return ch;
   }
+
   public static void main(String[] args) {
     char[] ch = new char[123];
     alphabet(ch);
@@ -19,4 +20,3 @@ public class Main02 {
     }
   }
 }
-g
