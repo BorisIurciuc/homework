@@ -13,10 +13,18 @@ public class TV {
     this.canalTV = canalTV;
   }
 
+  public int getFrequencyTv() {
+    return frequencyTv;
+  }
+
   public void setCanalTV(int canalTV) {
     if (canalTV > 0) {
       this.canalTV = canalTV;
     }
+  }
+
+  public int getCanalTV() {
+    return canalTV;
   }
 
   public void upTV() {
@@ -27,11 +35,7 @@ public class TV {
     canalTV--;
   }
 
-  public int getCanalTV() {
-    return canalTV;
-  }
-
-  public void printTV() {
+  public void showTV() {
     System.out.println("CanalTV " + getCanalTV());
   }
 }

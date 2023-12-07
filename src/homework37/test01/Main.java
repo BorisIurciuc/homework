@@ -11,14 +11,14 @@ public class Main {
     TV tv = new TV(116, 2);
     Remote remote = new Remote(116, tv);
 
-    tv.printTV();
+    tv.showTV();
     remote.tv.upTV();
-    tv.printTV();
+    tv.showTV();
     remote.tv.downTV();
-    tv.printTV();
-    remote.tv.setCanalTV(9);
-    tv.printTV();
-    remote.tv.setCanalTV(-1);
-    tv.printTV();
+    tv.showTV();
+    remote.nrCanal(5);
+    tv.showTV();
+    remote.nrCanal(-5);
+    tv.showTV();
   }
 }
