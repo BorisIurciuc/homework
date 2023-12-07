@@ -29,4 +29,10 @@ public class Remote {
       tv.setCanalTV(canal);
     }
   }
+  public void up(){
+    tv.upTV();
+  }
+  public void down(){
+    tv.downTV();
+  }
 }

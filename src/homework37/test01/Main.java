@@ -12,13 +12,13 @@ public class Main {
     Remote remote = new Remote(116, tv);
 
     tv.showTV();
-    remote.tv.upTV();
+    remote.up();
     tv.showTV();
-    remote.tv.downTV();
+    remote.down();
     tv.showTV();
-    remote.nrCanal(5);
+    remote.canal(5);
     tv.showTV();
-    remote.nrCanal(-5);
+    remote.canal(-5);
     tv.showTV();
   }
 }

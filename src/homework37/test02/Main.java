@@ -17,8 +17,8 @@ public class Main {
     do {
       System.out.print("Кнопки:  1 -> , 2 <- , 3 - каналы, 0 - выход ");
       nr = scanner.nextInt();
-      if (nr == 1) {  remote.tv.upTV();}
-      if (nr == 2) {  remote.tv.downTV();}
+      if (nr == 1) {  remote.up();}
+      if (nr == 2) {  remote.down();}
       if (nr == 3) {
         System.out.print("кнопка - ");
         remote.nrCanal(scanner.nextInt());
