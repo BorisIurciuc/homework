@@ -5,44 +5,44 @@ package homework37.test02;
  */
 public class TV {
 
-  private int frequencyTv;
-  private int canalTV;
+  private int frequency;
+  private int canal;
   private int maxCanal;
 
-  public TV(int frequencyTv, int canalTV, int maxCanal) {
-    this.frequencyTv = frequencyTv;
-    this.canalTV = canalTV;
+  public TV(int frequency, int canal, int maxCanal) {
+    this.frequency = frequency;
+    this.canal = canal;
     this.maxCanal = maxCanal;
   }
 
   public int getFrequencyTv() {
-    return frequencyTv;
+    return frequency;
   }
 
-  public void setCanalTV(int canalTV) {
-    if (canalTV > 0) {
-      this.canalTV = canalTV;
+  public void setCanal(int canal) {
+    if (canal > 0) {
+      this.canal = canal;
     }
   }
 
-  public int getCanalTV() {
-    return canalTV;
+  public int getCanal() {
+    return canal;
   }
 
   public void upTV() {
-    if (canalTV > 9) {
-      canalTV = 0;
+    if (canal > 9) {
+      canal = 0;
     }
-      canalTV++;
+      canal++;
     }
 
   public void downTV() {
-    if (canalTV < 2) {
-      canalTV = 11;
+    if (canal < 2) {
+      canal = 11;
     }
-    canalTV--;
+    canal--;
   }
   public void showTV() {
-    System.out.println("Вы смотрите " + getCanalTV() + " канал ");
+    System.out.println("Вы смотрите " + getCanal() + " канал ");
   }
 }

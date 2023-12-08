@@ -5,17 +5,16 @@ package homework37.test02;
  */
 public class Remote {
 
-  private int frequencyRemote;
-  int canal;
+  private int frequency;
   TV tv;
 
-  public Remote(int frequencyRemote, TV tv) {
-    this.frequencyRemote = frequencyRemote;
+  public Remote(int frequency, TV tv) {
+    this.frequency = frequency;
     this.tv = tv;
   }
 
   public int getFrequencyRemote() {
-    return frequencyRemote;
+    return frequency;
   }
 
   public boolean check() {
@@ -26,7 +25,7 @@ public class Remote {
     if (!check()) {
       return;
     } else {
-      tv.setCanalTV(canal);
+      tv.setCanal(canal);
     }
   }
   public void up(){

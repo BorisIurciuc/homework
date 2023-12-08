@@ -5,37 +5,37 @@ package homework37.test01;
  */
 public class TV {
 
-  private int frequencyTv;
-  private int canalTV;
+  private int frequency;
+  private int canal;
 
-  public TV(int frequencyTv, int canalTV) {
-    this.frequencyTv = frequencyTv;
-    this.canalTV = canalTV;
+  public TV(int frequencyTv, int canal) {
+    this.frequency = frequencyTv;
+    this.canal = canal;
   }
 
   public int getFrequencyTv() {
-    return frequencyTv;
+    return frequency;
   }
 
-  public void setCanalTV(int canalTV) {
-    if (canalTV > 0) {
-      this.canalTV = canalTV;
+  public void setCanal(int canal) {
+    if (canal > 0) {
+      this.canal = canal;
     }
   }
 
-  public int getCanalTV() {
-    return canalTV;
+  public int getCanal() {
+    return canal;
   }
 
   public void upTV() {
-    canalTV++;
+    canal++;
   }
 
   public void downTV() {
-    canalTV--;
+    canal--;
   }
 
   public void showTV() {
-    System.out.println("CanalTV " + getCanalTV());
+    System.out.println("Canal " + getCanal());
   }
 }
