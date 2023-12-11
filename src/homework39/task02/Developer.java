@@ -6,12 +6,8 @@ public class Developer extends Employee {
     super(name, salary);
   }
 
+  @Override
   public void work() {
     System.out.println(" Начинаю работать!");
-  }
-
-  @Override
-  public String toString() {
-    return this.getName() + " зарплата " + this.getSalary();
   }
 }

@@ -1,34 +1,27 @@
 package homework39.task02;
 
 /**
- * 11/12/2023 homework * @author Boris Iurciuc (cohort36)
+ * 11/12/2023 myCode * @author Boris Iurciuc (cohort36)
  */
 public class Main {
 
-    public static void getStarted(int numberOfStaff, Manager manager, Developer[] developer){
-      System.out.println(manager);
-      manager.work();
-      for (int i = 0; i < numberOfStaff; i++) {
-        System.out.print(developer[i]);
-        developer[i].work();
+    public static void getStarted(int numberOfStaff, Employee[] employee) {
+       for (int i = 0; i < numberOfStaff; i++) {
+        System.out.print(employee[i]);
+        employee[i].work();
       }
     }
 
   public static void main(String[] args) {
-    int numberOfStaff = 9;
-    Manager manager = new Manager("Bill", 9000);
-
-    Developer[] developer = new Developer[numberOfStaff];
-    developer[0] = new Developer("John", 5001);
-    developer[1] = new Developer("Jek", 5002);
-    developer[2] = new Developer("Bob", 5003);
-    developer[3] = new Developer("Kate", 5004);
-    developer[4] = new Developer("Mary", 5005);
-    developer[5] = new Developer("Sam", 5006);
-    developer[6] = new Developer("Peter", 5007);
-    developer[7] = new Developer("Elen", 5008);
-    developer[8] = new Developer("Tom", 5009);
-
-    getStarted(numberOfStaff, manager, developer);
+    Employee[] employee = new Employee[10];
+    String[] name = {"Bill", "John", "Jek", "Bob", "Kate", "Mary", "Sam", "Peter", "Helen","Tom"};
+    for (int i = 0; i < employee.length; i++) {
+      if (i < 1) {
+        employee[i] = new Manager(name[i], 7500 );
+      } else {
+        employee[i] = new Developer(name[i], 5000 + i * 10 );
+      }
+    }
+    getStarted(10, employee);
   }
 }
