@@ -7,6 +7,6 @@ public class Manager extends Employee {
   }
   @Override
   public void work() {
-    System.out.println(getPost() + " Девочки работать!!!");
+    System.out.println(" " + getPost() + " Девочки работать!!!");
   }
 }

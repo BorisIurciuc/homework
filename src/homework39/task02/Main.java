@@ -5,13 +5,14 @@ package homework39.task02;
  */
 public class Main {
   public static void promotion(Employee[] employee){
-    String[] name = {"Bill", "John"};
+    String[] name = {"Bill", "John", "Jek", "Bob", "Kate", "Mary", "Sam", "Peter", "Helen","Tom"};
+    int index = 5;
     for (int i = 0; i < employee.length; i++) {
       if (employee[i] instanceof Manager)  {
         employee[i].setSalary(7500 + 1000);
       }
-      if (employee[1] instanceof Developer) {
-        employee[1] = new Manager(name[1], 7500 );
+      if (employee[index] instanceof Developer) {
+        employee[index] = new Manager(name[index], 7500 );
       }
       break;
     }
