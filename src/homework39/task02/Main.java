@@ -1,12 +1,16 @@
 package homework39.task02;
 
+import java.util.Scanner;
+
 /**
  * 11/12/2023 myCode * @author Boris Iurciuc (cohort36)
  */
 public class Main {
   public static void promotion(Employee[] employee){
-    String[] name = {"Bill", "John", "Jek", "Bob", "Kate", "Mary", "Sam", "Peter", "Helen","Tom"};
-    int index = 5;
+    Scanner scanner = new Scanner(System.in);
+    String[] name = {"Bill", "John", "Jack", "Bob", "Kate", "Mary", "Sam", "Peter", "Helen","Tom"};
+    System.out.print("Выбрать индекс сотрудника - ");
+    int index = scanner.nextInt();
     for (int i = 0; i < employee.length; i++) {
       if (employee[i] instanceof Manager)  {
         employee[i].setSalary(7500 + 1000);
