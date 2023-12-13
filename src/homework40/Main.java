@@ -14,23 +14,17 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Dishes[] dishes = new Dishes[12];
-    for (int i = 0; i < dishes.length; i++) {
-      if (i < 6) {
-        dishes[i] = new Mug("чашка", "белая", 0);
-      } else {
-        dishes[i] = new Plate("тарелка", "бежевая", 25);
-      }
-    }
+      Dishes mug1 = new Mug("чашка", "белая", 0);
+      Dishes mug2 = new Mug("чашка", "белая", 0);
 
-    print(dishes);
-    System.out.println(dishes[0]);                   // состояние первой чашки
-    System.out.println(dishes[1]);                   // состояние второй чашки
-    System.out.println(dishes[0].equals(dishes[1])); // сравнение чашек
-    dishes[0].service();                             // изменено значение - жидкость в первой чашке
-    System.out.println(dishes[0]);                   // новое состояние первой чашки
-    System.out.println(dishes[0].equals(dishes[1])); // сравнение чашек
-  }
+      System.out.println(mug1);                   // состояние первой чашки
+      System.out.println(mug2);                   // состояние второй чашки
+      System.out.println(mug1.equals(mug2));      // сравнение чашек
+      mug1.service();                             // изменено значение - жидкость в первой чашке
+      System.out.println(mug1);                   // состояние первой чашки
+      System.out.println(mug1.equals(mug2));      // сравнение чашек
+
+    }
 }
 
 
