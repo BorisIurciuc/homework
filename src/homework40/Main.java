@@ -5,13 +5,6 @@ package homework40;
  */
 public class Main {
 
-  public static void print(Dishes[] dishes) {
-    for (int i = 0; i < dishes.length; i++) {
-      System.out.println((i + 1) + " " + dishes[i].getName() + " " + dishes[i].getColor());
-    }
-    System.out.println();
-  }
-
   public static void main(String[] args) {
 
       Dishes mug1 = new Mug("чашка", "белая", 0);
