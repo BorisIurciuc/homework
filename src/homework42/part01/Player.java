@@ -1,6 +1,6 @@
 package homework42.part01;
 
-public class Player extends Entity{
+public abstract class Player extends Entity{
 
   public Player(String name, int health, int attackPower) {
     super(name, health, attackPower);
