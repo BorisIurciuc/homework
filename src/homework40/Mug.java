@@ -2,13 +2,33 @@ package homework40;
 
 import java.util.Objects;
 
-public class Mug extends Dishes {
+public class Mug {
 
+  private String name;
+  private String color;
   private int fluid;           // вместимость, в мл
 
   public Mug(String name, String color, int fluid) {
-    super(name, color);
+
+    this.name = name;
+    this.color = color;
     this.fluid = fluid;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getColor() {
+    return color;
+  }
+
+  public void setColor(String color) {
+    this.color = color;
   }
 
   public int getFluid() {
@@ -19,7 +39,6 @@ public class Mug extends Dishes {
     this.fluid = fluid;
   } // изменено значение - жидкость
 
-  @Override
   public void service() {
     setFluid(50);
   }
