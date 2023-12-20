@@ -1,12 +1,9 @@
-package homework42.part03;
+package homework42;
 
-public class Mage extends Player implements Attackable {
+public class Monster extends Entity implements Attackable {
 
-  private double mana;
-
-  public Mage(String name, int health, int attackPower, double mana) {
+  public Monster(String name, int health, int attackPower) {
     super(name, health, attackPower);
-    this.mana = mana;
   }
 
   @Override
@@ -19,46 +16,37 @@ public class Mage extends Player implements Attackable {
     super.setName(name);
   }
 
-  public double getMana() {
-    return mana;
-  }
-
-  public void setMana(double mana) {
-    this.mana = mana;
-  }
-
-  @Override
-  public int getAttackPower() {
-    return attackPower = (1 <= getMana()) ? attackPower * 2 : 0;
-  }
-
-  public int printAttackPower() {
-    return attackPower;
-  } //вывод на консоль силы атаки
-
-  @Override
-  public void setAttackPower(int attackPower) {
-    super.setAttackPower(attackPower);
-  }
-
   @Override
   public int getHealth() {
     return super.getHealth();
   }
 
   @Override
+  public void setHealth(int health) {
+    super.setHealth(health);
+  }
+
+  @Override
+  public int getAttackPower() {
+    return super.getAttackPower();
+  }
+
+  @Override
+  public void setAttackPower(int attackPower) {
+    super.setAttackPower(attackPower);
+  }
+
+  public int printAttackPower() {
+    return attackPower;
+  } //вывод на консоль силы атаки
+  @Override
   public boolean isAlive() {
     return super.isAlive();
   }
 
   @Override
-  public boolean equals(Object obj, double mana) {
-    return mana == getMana() && super.equals(obj);
-  }
-
-  @Override
-  public boolean equals(Object obj, int armor) {
-    return false;
+  public boolean equals(Object obj) {
+    return super.equals(obj);
   }
 
   @Override
@@ -68,26 +56,21 @@ public class Mage extends Player implements Attackable {
 
   @Override
   public String toString() {
-    return super.toString() + " mana " + getMana();
+    return super.toString();
   }
 
   @Override
   public void attack(Attackable target, int attackPower) {
     target.takeDamage(attackPower);
-    mana--;
   }
-
   int damage; // переменная урон, как результат силы атаки и уровня защиты
-
   @Override
   public void takeDamage(int attackPower) {
     damage = attackPower;
-    health -= attackPower;
-    mana += 0.2;
+    health -= damage;
   }
 
   public int getDamage() {
     return damage;
   }
-
 }

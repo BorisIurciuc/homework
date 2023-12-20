@@ -1,10 +1,13 @@
-package homework42.part03;
+package homework42;
 
-public class Monster extends Entity implements Attackable {
+import java.util.Random;
 
-  public Monster(String name, int health, int attackPower) {
+public class Archer extends Player implements Attackable {
+
+  public Archer(String name, int health, int attackPower) {
     super(name, health, attackPower);
   }
+  Random random = new Random();
 
   @Override
   public String getName() {
@@ -22,10 +25,14 @@ public class Monster extends Entity implements Attackable {
   }
 
   @Override
-  public int getAttackPower() {
-    return super.getAttackPower();
+  public void setHealth(int health) {
+    super.setHealth(health);
   }
 
+  @Override
+  public int getAttackPower() {
+    return attackPower = (random.nextInt(100) < 20) ? attackPower * 2 : attackPower;
+  }
   @Override
   public void setAttackPower(int attackPower) {
     super.setAttackPower(attackPower);
@@ -46,6 +53,16 @@ public class Monster extends Entity implements Attackable {
   }
 
   @Override
+  public boolean equals(Object obj, double mana) {
+    return false;
+  }
+
+  @Override
+  public boolean equals(Object obj, int armor) {
+    return false;
+  }
+
+  @Override
   public int hashCode() {
     return super.hashCode();
   }
@@ -61,13 +78,10 @@ public class Monster extends Entity implements Attackable {
   }
 
   int damage; // переменная урон, как результат силы атаки и уровня защиты
-
-  @Override
   public void takeDamage(int attackPower) {
-    damage = attackPower;
+    damage = (random.nextInt(100) < 25) ? 0 : attackPower;
     health -= damage;
   }
-
   public int getDamage() {
     return damage;
   }

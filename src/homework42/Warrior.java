@@ -1,9 +1,8 @@
-package homework42.part03;
+package homework42;
 
 public class Warrior extends Player implements Attackable {
 
   private int armor;
-
   public Warrior(String name, int health, int attackPower, int armor) {
     super(name, health, attackPower);
     this.armor = armor;
@@ -33,6 +32,11 @@ public class Warrior extends Player implements Attackable {
   }
 
   @Override
+  public void setHealth(int health) {
+    super.setHealth(health);
+  }
+
+  @Override
   public int getAttackPower() {
     return super.getAttackPower();
   }
@@ -45,7 +49,6 @@ public class Warrior extends Player implements Attackable {
   public int printAttackPower() {
     return attackPower;
   } //вывод на консоль силы атаки
-
   @Override
   public boolean isAlive() {
     return super.isAlive();
@@ -58,7 +61,7 @@ public class Warrior extends Player implements Attackable {
 
   @Override
   public boolean equals(Object obj, int armor) {
-    return armor == getArmor() && super.equals(obj);
+    return  armor == getArmor() && super.equals(obj);
   }
 
   @Override
@@ -77,13 +80,11 @@ public class Warrior extends Player implements Attackable {
   }
 
   int damage; // переменная урон, как результат силы атаки и уровня защиты
-
   @Override
   public void takeDamage(int attackPower) {
     damage = attackPower - armor / 2;
     health -= damage;
   }
-
   public int getDamage() {
     return damage;
   }

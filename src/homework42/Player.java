@@ -1,9 +1,12 @@
-package homework42.part03;
+package homework42;
 
 public abstract class Player extends Entity {
 
   public Player(String name, int health, int attackPower) {
     super(name, health, attackPower);
+  }
+
+  public Player() {
   }
 
   @Override
@@ -19,6 +22,11 @@ public abstract class Player extends Entity {
   @Override
   public int getHealth() {
     return super.getHealth();
+  }
+
+  @Override
+  public void setHealth(int health) {
+    super.setHealth(health);
   }
 
   @Override
@@ -53,5 +61,9 @@ public abstract class Player extends Entity {
   @Override
   public String toString() {
     return super.toString();
+  }
+
+  public int toString2() {
+    return health;
   }
 }

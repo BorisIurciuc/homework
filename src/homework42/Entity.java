@@ -1,4 +1,4 @@
-package homework42.part01;
+package homework42;
 
 import java.util.Objects;
 
@@ -10,18 +10,34 @@ public abstract class Entity {
   protected int health;
   protected int attackPower;
 
+  public Entity () { }
+
   public Entity(String name, int health, int attackPower) {
     this.name = name;
     this.health = health;
     this.attackPower = attackPower;
   }
+  public String getName() {
+    return name;
+  }
 
+  public void setName(String name) {
+    this.name = name;
+  }
   public int getHealth() {
     return health;
   }
 
   public void setHealth(int health) {
     this.health = health;
+  }
+
+  public int getAttackPower() {
+    return attackPower;
+  }
+
+  public void setAttackPower(int attackPower) {
+    this.attackPower = attackPower;
   }
 
   public boolean isAlive(){
@@ -50,10 +66,6 @@ public abstract class Entity {
 
   @Override
   public String toString() {
-    return "Entity{" +
-        "name='" + name + '\'' +
-        ", health=" + health +
-        ", attackPower=" + attackPower +
-        '}';
+    return name + ", health=" + health + ", attackPower=" + attackPower ;
   }
 }

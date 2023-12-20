@@ -1,4 +1,4 @@
-package homework42.part03;
+package homework42;
 
 public interface Attackable {
 

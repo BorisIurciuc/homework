@@ -1,14 +1,13 @@
-package homework42.part03;
+package homework42;
 
-import java.util.Random;
+public class Mage extends Player implements Attackable {
 
-public class Archer extends Player implements Attackable {
+private double mana;
 
-  public Archer(String name, int health, int attackPower) {
+  public Mage(String name, int health, int attackPower, double mana) {
     super(name, health, attackPower);
+    this.mana = mana;
   }
-
-  Random random = new Random();
 
   @Override
   public String getName() {
@@ -20,19 +19,17 @@ public class Archer extends Player implements Attackable {
     super.setName(name);
   }
 
-  @Override
-  public int getHealth() {
-    return super.getHealth();
+  public double getMana() {
+    return mana;
+  }
+
+  public void setMana(double mana) {
+    this.mana = mana;
   }
 
   @Override
   public int getAttackPower() {
-    return attackPower = (random.nextInt(100) < 20) ? attackPower * 2 : attackPower;
-  }
-
-  @Override
-  public void setAttackPower(int attackPower) {
-    super.setAttackPower(attackPower);
+    return attackPower = (1 <= getMana()) ? attackPower * 2 : 0;
   }
 
   public int printAttackPower() {
@@ -40,19 +37,29 @@ public class Archer extends Player implements Attackable {
   } //вывод на консоль силы атаки
 
   @Override
+  public void setAttackPower(int attackPower) {
+    super.setAttackPower(attackPower);
+  }
+
+  @Override
+  public int getHealth() {
+    return super.getHealth();
+  }
+
+  @Override
+  public void setHealth(int health) {
+    super.setHealth(health);
+  }
+
+  @Override
   public boolean isAlive() {
     return super.isAlive();
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return super.equals(obj);
-  }
-
-  @Override
   public boolean equals(Object obj, double mana) {
-    return false;
-  }
+    return mana == getMana() && super.equals(obj);
+     }
 
   @Override
   public boolean equals(Object obj, int armor) {
@@ -66,21 +73,21 @@ public class Archer extends Player implements Attackable {
 
   @Override
   public String toString() {
-    return super.toString();
+    return super.toString() + " mana " + getMana();
   }
 
   @Override
   public void attack(Attackable target, int attackPower) {
     target.takeDamage(attackPower);
+    mana --;
   }
-
   int damage; // переменная урон, как результат силы атаки и уровня защиты
-
+  @Override
   public void takeDamage(int attackPower) {
-    damage = (random.nextInt(100) < 25) ? 0 : attackPower;
-    health -= damage;
+    damage = attackPower;
+    health -= attackPower;
+    mana += 0.2;
   }
-
   public int getDamage() {
     return damage;
   }
