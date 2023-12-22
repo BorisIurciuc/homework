@@ -5,15 +5,12 @@ public class Circle extends Shape {
   private int radius;
 
   public Circle() {
-
   }
 
   @Override
   public double getPerimeter() {
-    return perimeter = 2 * getRadius() * Math.PI;
+    return 2 * getRadius() * Math.PI;
   }
-
-
 
   public void setRadius(int radius) {
     this.radius = radius;
@@ -25,6 +22,6 @@ public class Circle extends Shape {
 
   @Override
   public String toString() {
-    return "Circle:   " + " perimeter = " + perimeter + ", radius: " + radius;
+    return "Circle:   " + " perimeter = " + getPerimeter() + ", radius: " + radius;
   }
 }

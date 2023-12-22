@@ -9,7 +9,7 @@ public class Polygon extends Shape {
   }
   @Override
   public double getPerimeter() {
-    return perimeter = getSideLength() + getAmountSide();
+    return getSideLength() * getAmountSide();
   }
 
   public int getSideLength() {
@@ -30,7 +30,7 @@ public class Polygon extends Shape {
 
   @Override
   public String toString() {
-    return "Polygon:  " + " perimeter: " + perimeter + ", sideLength: " + sideLength +
+    return "Polygon:  " + " perimeter: " + getPerimeter() + ", sideLength: " + sideLength +
         ", amountSide: " + amountSide;
   }
 }
