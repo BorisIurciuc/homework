@@ -5,12 +5,8 @@ public class Polygon extends Shape {
   private int sideLength;
   private int amountSide;
 
-  public Polygon(double perimeter, int sideLength, int amountSide) {
-    super(perimeter);
-    this.amountSide = amountSide;
-    this.sideLength = sideLength;
+  public Polygon() {
   }
-
   @Override
   public double getPerimeter() {
     return perimeter = getSideLength() + getAmountSide();

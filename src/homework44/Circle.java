@@ -4,9 +4,8 @@ public class Circle extends Shape {
 
   private int radius;
 
-  public Circle(double perimeter, int radius) {
-    super(perimeter);
-    this.radius = radius;
+  public Circle() {
+
   }
 
   @Override
@@ -14,12 +13,14 @@ public class Circle extends Shape {
     return perimeter = 2 * getRadius() * Math.PI;
   }
 
-  public int getRadius() {
-    return radius;
-  }
+
 
   public void setRadius(int radius) {
     this.radius = radius;
+  }
+
+  public int getRadius() {
+    return radius;
   }
 
   @Override

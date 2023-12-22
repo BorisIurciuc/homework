@@ -5,16 +5,16 @@ public class Rectangle extends Shape {
   private int sideA;
   private int sideB;
 
-  public Rectangle(double perimeter, int sideA, int sideB) {
-    super(perimeter);
-    this.sideA = sideA;
-    this.sideB = sideB;
+  public Rectangle() {
+
   }
 
   @Override
   public double getPerimeter() {
     return perimeter = (getSideA() + getSideB()) * 2;
   }
+
+
 
   public int getSideA() {
     return sideA;

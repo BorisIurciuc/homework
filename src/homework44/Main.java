@@ -14,22 +14,22 @@ public class Main {
     System.out.println("Какой формы участок: 1 - rectangle, 2 - circle  3- polygon: ");
     switch (scanner.nextInt()) {
       case 1:
-        Rectangle rectangle = new Rectangle(0, 0, 0);
-        rectangle.setSideA(2);
-        rectangle.setSideB(3);
+        Rectangle rectangle = new Rectangle();
+        rectangle.setSideA(4);
+        rectangle.setSideB(5);
         price *= rectangle.getPerimeter();
         System.out.println(rectangle + ", price rectangle: " + price + "Euro");
         break;
       case 2:
-        Circle circle = new Circle(0, 0);
+        Circle circle = new Circle();
         circle.setRadius(2);
         price *= circle.getPerimeter();
         System.out.println(circle + ", price circle: " + price + "Euro");
         break;
       case 3:
-        Polygon polygon = new Polygon(0, 0, 0);
-        polygon.setSideLength(2);
-        polygon.setAmountSide(6);
+        Polygon polygon = new Polygon();
+        polygon.setSideLength(1);
+        polygon.setAmountSide(4);
         price *= polygon.getPerimeter();
         System.out.println(polygon + ", price polygon: " + price + "Euro");
     }
