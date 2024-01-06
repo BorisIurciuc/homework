@@ -2,9 +2,17 @@ package homework44;
 
 public class Circle extends Shape {
 
-  private int radius;
+  private double radius;
 
   public Circle() {
+  }
+
+  public void setRadius(int radius) {
+    this.radius = radius;
+  }
+
+  public double getRadius() {
+    return radius;
   }
 
   @Override
@@ -12,16 +20,13 @@ public class Circle extends Shape {
     return 2 * getRadius() * Math.PI;
   }
 
-  public void setRadius(int radius) {
-    this.radius = radius;
-  }
-
-  public int getRadius() {
-    return radius;
+  @Override
+  public void resize(double coefficient) {
+    this.radius = getRadius() * coefficient;
   }
 
   @Override
   public String toString() {
-    return "Circle:   " + " perimeter = " + getPerimeter() + ", radius: " + radius;
+    return "Circle: radius: " + radius;
   }
 }

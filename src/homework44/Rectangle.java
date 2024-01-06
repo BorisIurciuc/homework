@@ -2,10 +2,26 @@ package homework44;
 
 public class Rectangle extends Shape {
 
-  private int sideA;
-  private int sideB;
+  private double sideA;
+  private double sideB;
 
   public Rectangle() {
+  }
+
+  public double getSideA() {
+    return sideA;
+  }
+
+  public void setSideA(double sideA) {
+    this.sideA = sideA;
+  }
+
+  public double getSideB() {
+    return sideB;
+  }
+
+  public void setSideB(double sideB) {
+    this.sideB = sideB;
   }
 
   @Override
@@ -13,26 +29,14 @@ public class Rectangle extends Shape {
     return (getSideA() + getSideB()) * 2;
   }
 
-  public int getSideA() {
-    return sideA;
-  }
-
-  public void setSideA(int sideA) {
-    this.sideA = sideA;
-  }
-
-  public int getSideB() {
-    return sideB;
-  }
-
-  public void setSideB(int sideB) {
-    this.sideB = sideB;
+  @Override
+  public void resize(double coefficient) {
+    sideA *= coefficient;
+    sideB *= coefficient;
   }
 
   @Override
   public String toString() {
-    return "Rectangle: " + " perimeter: " + getPerimeter() + ", sideA: " + sideA + ", sideB: " + sideB;
+    return "Rectangle: " + " sideA: " + sideA + ", sideB: " + sideB;
   }
 }
-
-
