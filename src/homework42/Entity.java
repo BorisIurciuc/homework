@@ -2,21 +2,18 @@ package homework42;
 
 import java.util.Objects;
 
-/** 16/12/2023 myCode * @author Boris Iurciuc (cohort36)
- */
 public abstract class Entity {
 
   protected String name;
   protected int health;
   protected int attackPower;
 
-  public Entity () { }
-
   public Entity(String name, int health, int attackPower) {
     this.name = name;
     this.health = health;
     this.attackPower = attackPower;
   }
+
   public String getName() {
     return name;
   }
@@ -24,6 +21,7 @@ public abstract class Entity {
   public void setName(String name) {
     this.name = name;
   }
+
   public int getHealth() {
     return health;
   }
@@ -40,7 +38,7 @@ public abstract class Entity {
     this.attackPower = attackPower;
   }
 
-  public boolean isAlive(){
+  public boolean isAlive() {
     return getHealth() > 0;
   }
 
@@ -50,13 +48,13 @@ public abstract class Entity {
       return true;
     }
     Entity entity;
-    if (obj instanceof Entity ) {
+    if (obj instanceof Entity) {
       entity = (Entity) obj;
-    } else  {
+    } else {
       return false;
     }
-    return health == entity.getHealth() && attackPower == entity.attackPower && Objects.equals(
-        name, entity.name);
+    return health == entity.getHealth() && attackPower == entity.getAttackPower() && Objects.equals(
+        name, entity.getName());
   }
 
   @Override
@@ -66,6 +64,6 @@ public abstract class Entity {
 
   @Override
   public String toString() {
-    return name + ", health=" + health + ", attackPower=" + attackPower ;
+    return name + ", health=" + health + ", attackPower=" + attackPower;
   }
 }

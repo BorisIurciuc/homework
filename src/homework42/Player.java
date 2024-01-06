@@ -1,17 +1,9 @@
 package homework42;
 
-public abstract class Player extends Entity {
+public abstract class Player extends Entity implements Attackable {
 
   public Player(String name, int health, int attackPower) {
     super(name, health, attackPower);
-  }
-
-  public Player() {
-  }
-
-  @Override
-  public String getName() {
-    return super.getName();
   }
 
   @Override
@@ -30,18 +22,8 @@ public abstract class Player extends Entity {
   }
 
   @Override
-  public int getAttackPower() {
-    return super.getAttackPower();
-  }
-
-  @Override
   public void setAttackPower(int attackPower) {
     super.setAttackPower(attackPower);
-  }
-
-  @Override
-  public boolean isAlive() {
-    return super.isAlive();
   }
 
   @Override
@@ -61,9 +43,5 @@ public abstract class Player extends Entity {
   @Override
   public String toString() {
     return super.toString();
-  }
-
-  public int toString2() {
-    return health;
   }
 }

@@ -1,78 +1,34 @@
 package homework42;
 
+//  16/12/2023 myCode * @author Boris Iurciuc (cohort36)
+
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * 16/12/2023 myCode * @author Boris Iurciuc (cohort36)
- */
 public class Main {
 
-  public static void main(String[] args) {
+  public static void game(AttackManager manager, Player player, Monster monster) {
     Scanner scanner = new Scanner(System.in);
-    Random random = new Random();
-
-    Player player = new Player() {
-      @Override
-      public boolean equals(Object obj, double mana) {
-        return false;
-      }
-
-      @Override
-      public boolean equals(Object obj, int armor) {
-        return false;
-      }
-    };
-
-    AttackManager manager = new AttackManager();
-    Attackable attackable = new Monster("", 0, 0);
-
-    System.out.print("Выбрать боевой класс : 1 - маг, 2 - воин, 3 - лучник : ");
-    int tip = scanner.nextInt();
-    scanner.nextLine();
-    System.out.print("Задать имя игрока: ");
-    player.setName(scanner.nextLine());
-
-    switch (tip) {
-      case 1:
-        attackable = new Mage(player.getName(), 30, 4, 2);
-        player.setHealth(30);
-        player.setAttackPower(4);
-        break;
-      case 2:
-        attackable = new Warrior(player.getName(), 25, 3, 2);
-        player.setHealth(25);
-        player.setAttackPower(3);
-        break;
-      case 3:
-        attackable = new Archer(player.getName(), 20, 2);
-        player.setHealth(20);
-        player.setAttackPower(2);
-    }
-
-    Monster monster = new Monster("Dragon", random.nextInt(1, 20),
-        random.nextInt(1, 20));
-
     System.out.println("Состояние игроков перед боем");
-    System.out.println(attackable);
-    System.out.println(monster + "\n");
+    System.out.print(player);
+    System.out.println(" " + monster);
 
     boolean game = false;
     int step = 1;
     do {
       System.out.println("\n" + "Бой " + step);
       //Игрок атакует монстра
+      assert player != null;
       manager.sendAttackManager(monster, player.getAttackPower());
       System.out.println("   Игрок " + player.getName() + " атакует монстра " + monster.getName());
-      System.out.println(attackable);
-      System.out.println(monster);
-
+      System.out.print(player);
+      System.out.println(" -> " + monster);
       //Монстр атакует игрока
-      monster.attack(attackable, monster.getAttackPower());
+      monster.attack(player, monster.getAttackPower());
       System.out.println("   Монстр " + monster.getName() + " атакует игрока " + player.getName());
-      System.out.println(attackable);
-      System.out.println(monster);
-
+      System.out.print(player);
+      System.out.println(" <- " + monster);
+      //условие продолжения игры
       System.out.println("продолжить ? ");
       step = scanner.nextInt();
       if (step == 0) {
@@ -88,7 +44,25 @@ public class Main {
         game = true;
       }
     } while (!game);
+  }
 
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    Random random = new Random();
+    Player player = null;
+    AttackManager manager = new AttackManager();
+    Monster monster = new Monster("Dragon", random.nextInt(1, 20),
+        random.nextInt(1, 20));
+
+    System.out.print("Задать имя игрока: ");
+    String playerName = scanner.nextLine();
+    System.out.print("Выбрать боевой класс : 1 - маг, 2 - воин, 3 - лучник : ");
+    switch (scanner.nextInt()) {
+      case 1 -> player = new Mage(playerName, 30, 4, 2);
+      case 2 -> player = new Warrior(playerName, 25, 3, 2);
+      case 3 -> player = new Archer(playerName, 20, 2);
+    }
+    game(manager, player, monster);
     scanner.close();
   }
 }
