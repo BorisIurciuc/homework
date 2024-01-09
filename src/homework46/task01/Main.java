@@ -7,20 +7,25 @@ import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
-
     Scanner scanner = new Scanner(System.in);
-    double value;
+    double[] value = new double[7];
     double sum = 0;
     double average = 0;
-    int count = 0;
+    int count = 1;
 
     do {
       System.out.print("Enter value - ");
-      value = scanner.nextDouble();
-      sum += value;
+      value[count] = scanner.nextDouble();
+      if (value[count] == 0) break;
+      sum += value[count];
       average = sum / count;
       count++;
-    } while (value !=0);
-    System.out.printf("%.2f ", average);
+    } while (true);
+
+    for (count = 1; count < value.length - 1; count++) {
+      System.out.print(value[count] + " ");
+    }
+    System.out.printf("\n%.2f ", average);
+    scanner.close();
   }
 }
