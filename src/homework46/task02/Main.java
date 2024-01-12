@@ -6,22 +6,9 @@ import java.util.Scanner;
  * 09/01/2024 homework * @author Boris Iurciuc (cohort36)
  */
 public class Main {
-
-  public static void main(String[] args) {
-
-    Scanner scanner = new Scanner(System.in);
-    int day;
-    while (true) {
-      System.out.print("Enter integer number 1 - 7 : ");
-       day = scanner.nextInt();
-      if (day > 0 && day < 8) {
-        break;
-      } else  {
-        System.out.println("Error, number ");
-      }
-    }
-
-    switch (day) {
+  public static void nameDay(int day) {
+    switch(day)
+    {
       case 1:
         System.out.println("Monday");
         break;
@@ -46,5 +33,21 @@ public class Main {
       default:
         System.out.println("Check the number");
     }
+  }
+
+  public static void main(String[] args) {
+
+    Scanner scanner = new Scanner(System.in);
+    int day;
+    while (true) {
+      System.out.print("Enter integer number 1 - 7 : ");
+      day = scanner.nextInt();
+      if (day > 0 && day < 8) {
+        break;
+      } else {
+        System.out.println("Error, number ");
+      }
+    }
+    nameDay(day);
   }
 }
