@@ -8,24 +8,23 @@ public class Main {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    double[] value = new double[7];
+    double[] value = {0};
+    MyArray myArray = new MyArray(value);
+
     double sum = 0;
     double average = 0;
     int count = 1;
-
     do {
       System.out.print("Enter value - ");
-      value[count] = scanner.nextDouble();
-      if (value[count] == 0) break;
-      sum += value[count];
+      myArray.add(scanner.nextDouble());
+      if (myArray.get(count) == 0) break;
+      sum += myArray.get(count);
       average = sum / count;
       count++;
     } while (true);
 
-    for (count = 1; count < value.length - 1; count++) {
-      System.out.print(value[count] + " ");
-    }
     System.out.printf("\n%.2f ", average);
+    System.out.println("\n" + myArray);
     scanner.close();
   }
 }
