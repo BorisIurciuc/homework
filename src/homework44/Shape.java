@@ -2,8 +2,6 @@ package homework44;
 
 public abstract class Shape implements Resizable {
 
-  protected double perimeter;
-
   public Shape() {
   }
 
@@ -15,6 +13,6 @@ public abstract class Shape implements Resizable {
 
   @Override
   public String toString() {
-    return "Shape: " + "perimeter = " + perimeter;
+    return "Shape: " + "perimeter = " + getPerimeter();
   }
 }
