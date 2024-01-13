@@ -2,21 +2,19 @@ package homework47;
 
 public class MyArray<T1, T2> {
 
-  private Pair<T1, T2>[] array; // Use Pair<T1, T2>[] instead of Object[]
+  private Pair<T1, T2>[] array;
 
   public MyArray() {
     this.array = new Pair[0];
   }
 
-  public MyArray(T1 first, T2 second) {
-    this.array = new Pair[]{new Pair<>(first, second)};
-  }
 
   private void copy(Pair<T1, T2>[] src, Pair<T1, T2>[] dst) {
     for (int i = 0; i < src.length; i++) {
       dst[i] = src[i];
     }
   }
+
   public void add(int index, T1 first, T2 second) {
     if (index < 0 || index > array.length) {
       return;
@@ -34,7 +32,7 @@ public class MyArray<T1, T2> {
   public void indexOf(String product) {
     int index = -1;
     for (int i = 0; i < array.length; i++) {
-      if (product.equals(array[i].getFirst())) { // Compare with the first element of Pair
+      if (product.equals(array[i].getFirst())) {
         index = i;
         break;
       }
