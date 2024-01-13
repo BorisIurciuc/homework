@@ -7,10 +7,6 @@ public abstract class Shape implements Resizable {
   public Shape() {
   }
 
-  public Shape(double perimeter) {
-    this.perimeter = perimeter;
-  }
-
   public abstract double getPerimeter();
 
   @Override
