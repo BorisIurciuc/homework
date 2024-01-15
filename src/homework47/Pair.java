@@ -1,20 +1,22 @@
 package homework47;
 
-public class Pair<T1, T2> {
+public class Pair<T, E> {
 
-  private T1 first;
-  private T2 second;
+  private final T first;
+  private final E second;
 
-  public Pair(T1 first, T2 second) {
+  public Pair(T first, E second) {
     this.first = first;
     this.second = second;
   }
 
-  public T1 getFirst() {
+  public T getFirst() {
     return first;
   }
 
-  public T2 getSecond() {
+  public E getSecond() {
     return second;
   }
+
+
 }

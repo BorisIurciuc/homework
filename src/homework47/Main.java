@@ -1,24 +1,35 @@
 package homework47;
 
-/**
- * 11/01/2024 homework * @author Boris Iurciuc (cohort36)
- */
-
 import java.util.Scanner;
 
 public class Main {
 
+  public static void storeCCheckout(Pair<String, Double>[] pairs, int length) {
+  Scanner scanner = new Scanner(System.in);
+  System.out.print("Введите наименование товара - ");
+  String userChoice = scanner.nextLine();
+
+  int index = -1;
+  for (int i = 0; i < length; i++) {
+    if (userChoice.equals(pairs[i].getFirst())) {
+      index = i;
+      break;
+    }
+  }
+  if (index != -1) {
+    System.out.println("стоимость " + pairs[index].getFirst()
+        + " составляет " + pairs[index].getSecond() + " Евро");
+  } else {
+    System.out.println("Товара " + userChoice + " нет в магазине");
+  }
+}
+
   public static void main(String[] args) {
+    Pair<String, Double>[] pairs = new Pair[3];
+    pairs[0] = new Pair<>("Яблоко", 2.1);
+    pairs[1] = new Pair<>("Огурец", 1.5);
+    pairs[2] = new Pair<>("Лук", 0.9);
 
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("введите наименование продукта - ");
-    String nameProduct = scanner.nextLine();
-
-    MyArray<String, Double> product = new MyArray<>();
-    product.add(0, "Яблоко", 0.5);
-    product.add(1, "Лук", 1.1);
-    product.add(2, "Помидор", 2.1);
-
-    product.indexOf(nameProduct);
+    storeCCheckout(pairs, pairs.length);
   }
 }
