@@ -8,7 +8,12 @@ import static java.lang.Character.toUpperCase;
 public class Main {
 
   static boolean isPalindrome(String word){
-    return word.equals(new StringBuilder(word).reverse().toString());
+    for (int i = 0; i < word.length() / 2; i++) {
+      if (word.charAt(i) !=  word.charAt(word.length() - 1 - i)) {
+        return false;
+      }
+    }
+    return true;
   }
   static boolean isPangram(String sentence) {
     int[] count = new int[255];
@@ -29,7 +34,6 @@ public class Main {
 
     for (int i = 0; i < numbers.length; i++) {
       ipByte[i] = (byte)Integer.parseInt(numbers[i]);
-      System.out.print(ipByte[i] + " ");
     }
     return ipByte;
   }
@@ -84,7 +88,7 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    String word = "12344321";
+    String word = "a12321a";
     System.out.print("isPalindrome '" + word + "' ? -> ");
     System.out.println(isPalindrome(word));
 
@@ -94,7 +98,9 @@ public class Main {
 
     String ip = "77.166.21.33";
     System.out.print("parseIp '" + ip + "'  -> ");
-    parseIp(ip);
+    for (int i = 0; i < 4; i++) {
+      System.out.print(parseIp(ip)[i] + " ");
+    }
 
     String text = "Hallo";
     System.out.print("\nencrypt '" + text + "'  -> ");
