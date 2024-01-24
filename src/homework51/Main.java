@@ -34,6 +34,9 @@ public class Main {
 
     for (int i = 0; i < numbers.length; i++) {
       ipByte[i] = (byte)Integer.parseInt(numbers[i]);
+      if (Integer.parseInt(numbers[i]) < 1 || Integer.parseInt(numbers[i]) > 255)  {
+        throw new IndexOutOfBoundsException("IP Out Of Bounds");
+      }
     }
     return ipByte;
   }
@@ -96,10 +99,14 @@ public class Main {
     System.out.print("isPangram '" + sentence + "' ? -> ");
     System.out.println(isPangram(sentence));
 
-    String ip = "77.166.21.33";
+    String ip = "77.166.21.303";
     System.out.print("parseIp '" + ip + "'  -> ");
-    for (int i = 0; i < 4; i++) {
-      System.out.print(parseIp(ip)[i] + " ");
+    try {
+      for (int i = 0; i < 4; i++) {
+        System.out.print(parseIp(ip)[i] + " ");
+      }
+    } catch (IndexOutOfBoundsException e) {
+      System.out.println("IP Out Of Bounds ");
     }
 
     String text = "Hallo";
