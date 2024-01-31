@@ -13,6 +13,10 @@ public class Song {
     this.next = null;
   }
 
+  public String getTitle() {
+    return title;
+  }
+
   public String changeSecToMin(){
     return duration / 60 + " min, " + (duration - (duration / 60) * 60) + " sec";
   }
