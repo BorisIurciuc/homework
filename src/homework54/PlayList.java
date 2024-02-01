@@ -2,7 +2,9 @@ package homework54;
 
 import static java.util.Collections.shuffle;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -23,9 +25,11 @@ public class PlayList {
     System.out.print("After add by index ");
     songList.add(index, song);
   }
-  public int getSize(){
+
+  public int getSize() {
     return songList.size();
   }
+
   public Song getSongIndex(int index) {
     return songList.get(index);
   }
@@ -41,22 +45,22 @@ public class PlayList {
     }
   }
 
-  public List<Song> getListeningQueue() {
-    return songList;
+  public Deque<Song> getListeningQueue() {
+    return new ArrayDeque<>(songList);
   }
 
-  public List<Song> getShuffledListeningQueue() {
+  public Deque<Song> getShuffledListeningQueue() {
     List<Song> shuffledList = new LinkedList<>(songList);
     shuffle(shuffledList);
-    return shuffledList;
+    return new ArrayDeque<>(shuffledList);
   }
 
-  public List<Song> getReverseListeningQueue() {
+  public Deque<Song> getReverseListeningQueue() {
     List<Song> reversedList = new ArrayList<>(songList.size());
     ListIterator<Song> iteratorS = songList.listIterator(songList.size());
     while (iteratorS.hasPrevious()) {
       reversedList.add(iteratorS.previous());
     }
-    return reversedList;
+    return new ArrayDeque<>(reversedList);
   }
 }
